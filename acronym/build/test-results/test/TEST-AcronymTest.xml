@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="AcronymTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2024-10-01T10:48:25" hostname="WIN" time="0.084">
+  <properties/>
+  <testcase name="underscoreEmphasis()" classname="AcronymTest" time="0.067"/>
+  <testcase name="lowercaseWords()" classname="AcronymTest" time="0.001"/>
+  <testcase name="apostrophes()" classname="AcronymTest" time="0.002"/>
+  <testcase name="basic()" classname="AcronymTest" time="0.001"/>
+  <testcase name="veryLongAbbreviation()" classname="AcronymTest" time="0.001"/>
+  <testcase name="nonAcronymAllCapsWord()" classname="AcronymTest" time="0.001"/>
+  <testcase name="consecutiveDelimiters()" classname="AcronymTest" time="0.001"/>
+  <testcase name="punctuationWithoutWhitespace()" classname="AcronymTest" time="0.001"/>
+  <testcase name="punctuation()" classname="AcronymTest" time="0.001"/>
+  <system-out><![CDATA[THE-ROAD--NOT--TAKEN
+RUBY-ON-RAILS
+HALLEY'S-COMET
+PORTABLE-NETWORK-GRAPHICS
+ROLLING-ON-THE-FLOOR-LAUGHING-SO-HARD-THAT-MY-DOGS-CAME-OVER-AND-LICKED-ME
+GNU-IMAGE-MANIPULATION-PROGRAM
+SOMETHING---I-MADE-UP-FROM-THIN-AIR
+COMPLEMENTARY-METAL-OXIDE-SEMICONDUCTOR
+FIRST-IN,-FIRST-OUT
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
