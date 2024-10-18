@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 class GottaSnatchEmAll {
 
@@ -12,23 +13,26 @@ class GottaSnatchEmAll {
     }
 
     static boolean canTrade(Set<String> myCollection, Set<String> theirCollection) {
-        if (myCollection.isEmpty() || theirCollection.isEmpty()) {
-            return false;
-        }
-        if (myCollection.size() > theirCollection.size()) {
-            return theirCollection.stream()
-                    .anyMatch(e -> !myCollection.contains(e));
-        }
-        return myCollection.stream()
-                .anyMatch(e -> !theirCollection.contains(e));
+        if (myCollection.isEmpty() || theirCollection.isEmpty()) return false;
+        return !theirCollection.containsAll(myCollection) && !myCollection.containsAll(theirCollection);
     }
 
     static Set<String> commonCards(List<Set<String>> collections) {
-        List<String> listOfPokemons = new LinkedList<>();
-        collections.forEach(listOfPokemons::addAll);
+        Set<String> commonElements = new HashSet<>(collections.getFirst());
+        Set<String> copyOfCommonElements = Set.copyOf(commonElements);
+        for (Set<String> set : collections) {
+            copyOfCommonElements.forEach(e -> {
+                if(!set.contains(e)) {
+                    commonElements.remove(e);
+                }
+            });
+        }
+        return commonElements;
     }
 
     static Set<String> allCards(List<Set<String>> collections) {
-
+        Set<String> allCards = new HashSet<>();
+        collections.forEach(allCards::addAll);
+        return allCards;
     }
 }
